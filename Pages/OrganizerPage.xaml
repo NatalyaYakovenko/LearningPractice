@@ -1,0 +1,34 @@
+﻿<Page x:Class="NatalyaYakovenko.Pages.OrganizerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:NatalyaYakovenko.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="OrganizerPage">
+
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Image x:Name="ImgPhoto" Source="{Binding}" Margin="5"/>
+            <Button Grid.Row="1" Content="Мой профиль" Margin="5" x:Name="BtnMyProfile" Click="BtnMyProfile_Click"/>
+
+        </Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock x:Name="TBlockTimeHello" TextWrapping="Wrap" FontWeight="DemiBold" Text="Доброе утро/день/вечер!" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="TBlockFullName" TextWrapping="Wrap" FontWeight="DemiBold" Text="Ms/Mrs ФИО" HorizontalAlignment="Center"/>
+            <Button x:Name="BtnEvents" Content="Мероприятия" Margin="5" Padding="10 5" Click="BtnEvents_Click"/>
+            <Button x:Name="BtnPartipants" Content="Участники" Margin="5" Padding="10 5" Click="BtnPartipants_Click"/>
+            <Button x:Name="BtnJuries" Content="Жюри и Организаторы" Padding="10 5" Click="BtnJuries_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,83 @@
+﻿<Page x:Class="NatalyaYakovenko.Pages.RegistrationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:NatalyaYakovenko.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RegistrationPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="Id Number:" Margin="5"/>
+                <TextBox x:Name="TBoxId" Width="150" Margin="5" IsEnabled="False"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="ФИО:" Margin="5"/>
+                <TextBox x:Name="TBoxFullName" Width="150" Margin="5"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock VerticalAlignment="Center" Text="Пол:" Margin="5"/>
+                <ComboBox DisplayMemberPath="Name" VerticalAlignment="Center" x:Name="CBoxGender" Width="150" Margin="5"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock VerticalAlignment="Center" Text="Роль:" Margin="5"/>
+                <ComboBox DisplayMemberPath="Name"  x:Name="CBoxRole" Width="150" Margin="5"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="Email:" Margin="5"/>
+                <TextBox x:Name="TBoxEmail" Width="150" Margin="5"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="Телефон:" Margin="5"/>
+                <TextBox x:Name="TBoxPhoneNumber" Width="150" Margin="5"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock VerticalAlignment="Center" Text="Направление:" Margin="5"/>
+                <ComboBox DisplayMemberPath="Name" VerticalAlignment="Center" x:Name="CBoxDirection" IsEditable="True" Width="150" Margin="5"/>
+            </StackPanel>
+            <CheckBox Click="ChBoxAttachToEvent_Click" Margin="5" HorizontalAlignment="Right" x:Name="ChBoxAttachToEvent" Content="Прикрепить к мероприятию"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock VerticalAlignment="Center" Text="Мероприятие:" Margin="5"/>
+                <ComboBox DisplayMemberPath="Name" x:Name="CBoxEvent" Width="150" Margin="5" IsEnabled="False"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock VerticalAlignment="Center" Text="Страна:" Margin="5"/>
+                <ComboBox DisplayMemberPath="Name" x:Name="CBoxCountry" Width="150" Margin="5" IsEnabled="True"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1">
+            <Image HorizontalAlignment="Right" Width="150" Height="150" x:Name="ImgPhoto" Margin="5" MouseDown="ImgPhoto_MouseDown">
+                <Image.Source>
+                    <Binding>
+                        <Binding.TargetNullValue>
+                            <BitmapImage UriSource="/Resources/nophoto.png"/>
+                        </Binding.TargetNullValue>
+                    </Binding>
+                </Image.Source>
+            </Image>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="Пароль:" Margin="5"/>
+                <PasswordBox x:Name="PBoxPassword" Width="150" Margin="5"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="Повтор пароля:" Margin="5"/>
+                <Grid>
+                    <PasswordBox x:Name="PBoxRePassword" Width="150" Margin="5"/>
+                    <TextBox  x:Name="TBoxRePassword" Width="150" Margin="5" Visibility="Collapsed"/>
+                </Grid>
+            </StackPanel>
+            <CheckBox x:Name="ChBoxShowPassword" Click="ChBoxShowPassword_Click" Content="Видимый пароль" HorizontalAlignment="Center" Margin="70 5 5 5"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="Ок" Margin="5" Padding="10 5" Width="75" x:Name="BtnOk" Click="BtnOk_Click"/>
+                <Button Content="Отмена"  Margin="5" Padding="10 5"  Width="75" x:Name="BtnCancel" Click="BtnCancel_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
